@@ -37,6 +37,7 @@ const getApod = async (date) => {
       }
       resolve(apod.toObject());
     } catch (error) {
+      console.error(error);
       reject(error);
     }
   });
@@ -50,6 +51,7 @@ const createApod = async (date) => {
       const apod = await apodDoc.save();
       resolve(apod);
     } catch (error) {
+      console.error(error);
       reject(error);
     }
   });
@@ -63,6 +65,7 @@ const fetchApodFromNasa = async (date) => {
       const data = response.data;
       resolve(data);
     } catch (error) {
+      console.error(error);
       reject(error.response.data);
     }
   });
