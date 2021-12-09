@@ -21,7 +21,7 @@
     <div class="col-12 col-xl-8 col-lg-8 col-md-10  col-sm-12">
       <div class="w-100 text-center">
         {{#if apod_data.hdurl}}
-          <img src="{{ apod_data.hdurl }}" alt="{{ apod_data.title }}" class="img-fluid rounded">
+          <img src="/images/{{ apod_data.hdurl }}" alt="{{ apod_data.title }}" class="img-fluid rounded">
         {{/if}}
         {{#if apod_data.isVideo}}
         <div class="video-container">

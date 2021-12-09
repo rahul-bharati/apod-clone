@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
-  "engines": {
-    "node": "14.x"
-  },
-
   "scripts": {
     "start": "node server.js",
     "start-dev": "nodemon server.js"
