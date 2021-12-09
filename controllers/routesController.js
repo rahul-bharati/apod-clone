@@ -17,10 +17,14 @@ const renderHome = async (req, res) => {
     res.render("home", data);
   } catch (error) {
     data.error = error;
+    console.error(error.msg);
     if (error.msg.toLowerCase().includes("date must be between")) {
       const newDate = moment(error.msg.split("and")[1], "MMM DD, YYYY").format(
         "YYYY-MM-DD"
       );
+      data.date = newDate;
+    } else if (error.msg.toLowerCase().includes("no data available")) {
+      const newDate = moment().subtract(1, "day").format("YYYY-MM-DD");
       data.date = newDate;
     }
     res.render("home", data);
