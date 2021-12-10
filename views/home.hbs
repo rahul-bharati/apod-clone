@@ -1,3 +1,14 @@
+<div class="container my-3">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-12 col-xl-4 col-lg-4 col-md-6 col-sm-12">
+      <form action="/" method="get" class="form" id="form" name="form">
+        <div class="form-group">
+          <input type="date" name="date" id="date" class="form-control" value="{{date}}" max="today" onkeydown="return false">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {{#if error}}
 <div class="container my-5">
   <div class="row">
@@ -39,3 +50,9 @@
   </div>
 </div>
 {{/if}}
+<script>
+  var date;
+  {{#if date}}
+    date = "{{date}}"
+  {{/if}}
+</script>
