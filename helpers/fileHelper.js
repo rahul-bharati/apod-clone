@@ -1,4 +1,3 @@
-const { rejects } = require("assert/strict");
 const fs = require("fs");
 const https = require("https");
 
