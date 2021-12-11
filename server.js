@@ -7,8 +7,7 @@ const routes = require("./router/routes");
 
 const main = async () => {
   const PORT = process.env.PORT || 3000;
-  const MONGO_URI =
-    "mongodb+srv://apod-user:testuser@cluster0.y1ieq.mongodb.net/apod?retryWrites=true&w=majority";
+  const MONGO_URI = process.env.MONGODB_URI;
 
   console.info("Connecting to mongo cluster..");
   await mongoose.connect(MONGO_URI); // connect to mongo cluster
