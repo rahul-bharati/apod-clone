@@ -8,6 +8,7 @@ const schema = mongoose.Schema({
   url: String,
   hdurl: String,
   copyright: String,
+  remoteUrl: String,
 });
 
 module.exports = mongoose.model("APOD", schema);

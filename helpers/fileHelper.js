@@ -1,3 +1,4 @@
+const { rejects } = require("assert/strict");
 const fs = require("fs");
 const https = require("https");
 
@@ -19,6 +20,22 @@ const saveFileToPublic = (url) => {
   });
 };
 
+checkFileAndCreate = (file_name, remote_url) => {
+  return new Promise((resolve, reject) => {
+    try {
+      fs.exists(`public/images/${file_name}`, async (exists) => {
+        if (!exists) {
+          await saveFileToPublic(remote_url);
+        }
+        resolve(true);
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
 module.exports = {
   saveFileToPublic,
+  checkFileAndCreate,
 };

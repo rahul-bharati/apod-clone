@@ -14,6 +14,7 @@ const renderHome = async (req, res) => {
     data.date = moment(date).format("MMM DD, YYYY");
     res.render("home", data);
   } catch (error) {
+    console.log(error);
     data.error = error;
     console.error(error.msg);
     if (error.msg.toLowerCase().includes("date must be between")) {
